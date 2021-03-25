@@ -218,6 +218,8 @@ res_logit_sub   = nloptr(start,eval_f=like_cond, lb=lower,ub=upper,
 
 res_logit_sub$solution
 
+# Coefficient for price
+
 res_logit_sub$solution[10]
 
 # So, what this price variable is indicating is that an increase in the price of any of the
@@ -289,6 +291,8 @@ start  = runif(npar)
 res_mult_logit   = optim(start,fn=multi_fun,method = "BFGS",control = list(trace=6,REPORT=1,maxit=10000),
                          choice = choice, Income=Income, Whitecollar=Whitecollar,College=College,
                          Fam_s=Fam_s,Retired=Retired,hessian = FALSE)
+
+# Beta estimates for family income
 
 res_mult_logit$par[10:18]
 
